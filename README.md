@@ -21,6 +21,7 @@ Finance & Credit graduate, former software engineer, currently building SQL, Pyt
 | `09-sqlzoo-nobel-select.sql` | WHERE combinations, IN/NOT IN, ORDER BY tricks, non-ASCII characters |
 | `10-sqlzoo-join-tutorial.sql` | Multi-table JOINs, subtle own-goal edge case (goal.team vs player.team) |
 | `11-union-practice.sql` | UNION vs UNION ALL, combining labeled results from multiple queries |
+| `12-string-functions.sql` | LENGTH, UPPER/LOWER, TRIM, LEFT/RIGHT, SUBSTRING, REPLACE, LOCATE, CONCAT |
 
 ## Key Concepts Practiced
 - Excel: Pivot Tables, VLOOKUP/XLOOKUP, INDEX+MATCH (single & multi-condition), data-driven business insights
