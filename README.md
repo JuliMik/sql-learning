@@ -23,6 +23,7 @@ Finance & Credit graduate, former software engineer, currently building SQL, Pyt
 | `11-union-practice.sql` | UNION vs UNION ALL, combining labeled results from multiple queries |
 | `12-string-functions.sql` | LENGTH, UPPER/LOWER, TRIM, LEFT/RIGHT, SUBSTRING, REPLACE, LOCATE, CONCAT |
 | `13-case-statement.sql` | CASE WHEN: conditional categorization and calculated fields |
+| `14-subqueries.sql` | Subqueries in WHERE, SELECT, and FROM (derived tables), multi-layer aggregation |
 
 ## Key Concepts Practiced
 - Excel: Pivot Tables, VLOOKUP/XLOOKUP, INDEX+MATCH (single & multi-condition), data-driven business insights
