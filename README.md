@@ -24,6 +24,7 @@ Finance & Credit graduate, former software engineer, currently building SQL, Pyt
 | `12-string-functions.sql` | LENGTH, UPPER/LOWER, TRIM, LEFT/RIGHT, SUBSTRING, REPLACE, LOCATE, CONCAT |
 | `13-case-statement.sql` | CASE WHEN: conditional categorization and calculated fields |
 | `14-subqueries.sql` | Subqueries in WHERE, SELECT, and FROM (derived tables), multi-layer aggregation |
+| `15-window-functions.sql` | Window Functions: PARTITION BY, rolling totals, ROW_NUMBER/RANK/DENSE_RANK |
 
 ## Key Concepts Practiced
 - Excel: Pivot Tables, VLOOKUP/XLOOKUP, INDEX+MATCH (single & multi-condition), data-driven business insights
