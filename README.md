@@ -25,6 +25,7 @@ Finance & Credit graduate, former software engineer, currently building SQL, Pyt
 | `13-case-statement.sql` | CASE WHEN: conditional categorization and calculated fields |
 | `14-subqueries.sql` | Subqueries in WHERE, SELECT, and FROM (derived tables), multi-layer aggregation |
 | `15-window-functions.sql` | Window Functions: PARTITION BY, rolling totals, ROW_NUMBER/RANK/DENSE_RANK |
+| `16-cte-practice.sql` | CTE (Common Table Expressions): single, multiple, and explicit column naming |
 
 ## Key Concepts Practiced
 - Excel: Pivot Tables, VLOOKUP/XLOOKUP, INDEX+MATCH (single & multi-condition), data-driven business insights
@@ -36,7 +37,9 @@ Finance & Credit graduate, former software engineer, currently building SQL, Pyt
 - Handling data quality edge cases (e.g. distinguishing "credited" vs "actual" values in own-goal scenarios)
 
 ## Next Steps
-Subqueries & CTEs → Window Functions → Python (pandas) → Power BI
+Core SQL topics complete ✅ (SELECT, WHERE, GROUP BY, HAVING, JOIN, UNION, string functions, CASE WHEN, subqueries, Window Functions, CTE)
+
+Moving to: Python (pandas) → Statistics basics → Power BI
 
 ---
 *Part of a structured 5-month plan transitioning from software development into Data Analytics.*
