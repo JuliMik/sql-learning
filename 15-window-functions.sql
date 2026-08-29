@@ -1,5 +1,5 @@
 -- ============================================
--- Window Functions Practice (PARTITION BY, ROW_NUMBER, RANK, DENSE_RANK)
+-- Window Functions Practice (PARTITION BY, ROW_NUMBER, RANK, DENSE_RANK, LAG, LEAD)
 -- Table: parks_and_recreation
 -- ============================================
 
@@ -29,3 +29,17 @@ dense_rank() over(partition by gender order by salary desc) dense_rank_num
 from parks_and_recreation.employee_demographics dem
 join parks_and_recreation.employee_salary sal
 	on dem.employee_id = sal.employee_id;
+
+-- ROW_NUMBER without PARTITION BY: simple sequential ranking of all employees by age (oldest first)
+select first_name, last_name, age, gender, row_number() over(order by age desc) as row_num_by_age
+from parks_and_recreation.employee_demographics;
+
+-- LEAD / LAG: look at the next/previous row's birth_date within the age-ordered sequence
+-- LEAD(col) = next row's value | LEAD(col, 2, 0) = value 2 rows ahead, with 0 as fallback if none exists
+-- LAG(col) = previous row's value | LAG(col, 2, 0) = value 2 rows behind, with 0 as fallback if none exists
+select first_name, last_name, age, birth_date,
+lead(birth_date) over(order by age desc) lead_row,
+lead(birth_date, 2, 0) over(order by age desc) lead_row_x2,
+lag(birth_date) over(order by age desc) lag_row,
+lag(birth_date, 2, 0) over(order by age desc) lag_row_x2
+from parks_and_recreation.employee_demographics;
