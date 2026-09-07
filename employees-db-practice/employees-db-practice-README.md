@@ -36,5 +36,16 @@ Practicing business-style SQL queries on a large, realistic dataset (300,000+ em
 
 **Finding:** After correcting the date field, average tenure still came out nearly identical (~36 years) across every department. Investigated by sampling `employees.hire_date` directly, which showed hire dates in this sample dataset are concentrated within a narrow historical window (1985–1994). This is a data characteristic of the sample dataset, not a query error — tenure doesn't vary meaningfully by department here, since nearly all employees were hired in the same era.
 
+### 03 — Top 3 Longest-Tenured Employees per Department
+`03-top-tenured-employees-per-department.sql`
+
+**Task:** Management wants to see the top 3 longest-tenured current employees in each department, with their name, tenure in years, and their rank within the department.
+
+**Notes:**
+- Used a CTE to wrap a Window Function, since MySQL doesn't allow filtering a window function's result directly in WHERE at the same query level
+- Ranked by tenure in months (not whole years) for precision — ranking by year alone produced far too many ties, given the narrow hire-date range found in Task 02
+
+**Design decision:** Used `DENSE_RANK()` instead of `ROW_NUMBER()` intentionally. Many employees share identical tenure due to the narrow hire-date range in this dataset. `ROW_NUMBER()` would arbitrarily pick exactly 3 specific people, which could misrepresent "top 3" if this data were used for real decisions (e.g. raises, promotions). `DENSE_RANK()` honestly surfaces every employee tied for the top 3 tenure values, making the ambiguity visible instead of hiding it. A secondary tie-breaker (e.g. current salary, birth date) would be needed to narrow this down to exactly 3 named individuals per department, if that were the actual business requirement.
+
 ## Key Skill Practiced
 Working with **slowly changing dimension** tables (date-ranged records) — distinguishing "current" vs "historical" data using `to_date`, and clarifying ambiguous business requirements (e.g. "average salary" = current only, not full history) before writing the query.
